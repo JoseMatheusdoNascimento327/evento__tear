@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  height: 100vh;
+  color: #ffe81f;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Fundo de estrelas */
+canvas#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Texto com efeito de fade */
+.textos {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 20px;
+  text-shadow: 0 0 10px #000;
+}
+
+.fade-text {
+  opacity: 0;
+  animation: fade 12s infinite;
+}
+
+.fade-text:nth-child(1) { animation-delay: 0s; }
+.fade-text:nth-child(2) { animation-delay: 3s; }
+.fade-text:nth-child(3) { animation-delay: 6s; }
+.fade-text:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fade {
+  0%, 20% { opacity: 0; }
+  30%, 60% { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .textos {
+    font-size: 16px;
+  }
+}
